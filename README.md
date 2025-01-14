@@ -12,13 +12,9 @@ insert, update, and delete records in a database (DML operations)
 create new objects in a database (DDL operations)
 set permissions on tables, procedures, functions, and views
 and much, much more...
-# Main Title (From README.md)
-
-This is the main README file.
-
-## Additional Notes (From my_notes.md)
+ 
 
 ![Image Description](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/PostgreSQL-Features.png)
 
-[View Additional Notes](my_notes.md)
+ 
 
