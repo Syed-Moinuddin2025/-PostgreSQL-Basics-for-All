@@ -1,2 +1,14 @@
-# SQL-Basics-for-All
-SQL from basic to Advanced
+#  SQL-Basics-for-All   ( PostgreSQL ) 
+## SQL from basic to Advanced
+
+# What is SQL? </br>
+SQL is short for Structured Query Language. Originally, it used to be called SEQUEL (Structured English Query Language) and was used for storing and manipulating data in databases. Today SQL is used to perform all types of data operations in relational database management systems (RDBMS).
+
+SQL is a powerful language where we can perform a wide range of operations:
+
+execute queries
+fetch data
+insert, update, and delete records in a database (DML operations)
+create new objects in a database (DDL operations)
+set permissions on tables, procedures, functions, and views
+and much, much more...
