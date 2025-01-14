@@ -12,3 +12,9 @@ insert, update, and delete records in a database (DML operations)
 create new objects in a database (DDL operations)
 set permissions on tables, procedures, functions, and views
 and much, much more...
+ 
+
+ 
+
+ 
+
