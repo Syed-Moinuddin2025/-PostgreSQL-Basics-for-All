@@ -18,4 +18,7 @@ This is the main README file.
 
 ## Additional Notes (From my_notes.md)
 
-![Image Description](path/to/image.png)
+![Image Description](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/PostgreSQL-Features.png)
+
+[View Additional Notes](my_notes.md)
+
