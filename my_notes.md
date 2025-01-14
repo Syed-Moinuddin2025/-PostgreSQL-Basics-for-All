@@ -7,4 +7,4 @@ This is a markdown file where we will learn SQL.
 - `SELECT * FROM table_name;` - Fetches data from a table
 - `INSERT INTO table_name VALUES (...);` - Inserts data into a table
 
-![SQL Example Image](Images/sql_example.jpg)
+![SQL Example Image](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/PostgreSQL-Features.png)
