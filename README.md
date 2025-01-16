@@ -14,7 +14,14 @@ set permissions on tables, procedures, functions, and views
 and much, much more...
 
  ![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQL-Features.png)
+ 
+![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-0.png)
 
+![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-1.png)
+
+![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-2.png)
+
+![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-3.png)
  
 
  
