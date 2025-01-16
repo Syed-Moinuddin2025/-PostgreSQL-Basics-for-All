@@ -13,15 +13,38 @@ create new objects in a database (DDL operations)
 set permissions on tables, procedures, functions, and views
 and much, much more...
 
- ![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQL-Features.png)
+<div align="center">
+ <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQL-Features.png"  alt="postgreSQL" width="800" height="auto">
+</div>
+</br> </br>
  
-![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-0.png)
+<div align="center">
+    <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-0.png" alt="postgreSQL" width="800" height="auto">
+</div>
+</br>
 
-![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-1.png)
+<div align="center">
+    <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-1.png" alt="postgreSQL" width="800" height="auto">
+</div>
+</br>
 
-![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-2.png)
+<div align="center">
+    <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-2.png" alt="postgreSQL" width="800" height="auto">
+</div>
+</br>
+<div align="center">
+    <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-3.png" alt="postgreSQL" width="800" height="auto">
+</div>
+</br>
 
-![postgreSQL](https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-3.png)
+<div align="center">
+    <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-4.png" alt="postgreSQL" width="800" height="auto">
+</div>
+
+
+
+
+
  
 
  
