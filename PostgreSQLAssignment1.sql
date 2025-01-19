@@ -86,8 +86,9 @@ WHERE dept_name = 'IT'
 ORDER By salary  DESC LIMIT 1;
 --Q15: Update the email column for all employees with appropriate values.
 UPDATE employees
-SET email =LOWER (CONCAT(first_name,'@example.com')); 
---Q16: Find the total number of employees in each department
+SET email = LOWER(CONCAT(first_name, '.', last_name, '@hotmail.com'))
+WHERE employee_id IN (5); 
+--Q16: Find the total number of employees in each department.
 SELECT dept_name,COUNT(*) 
 FROM employees
 GROUP BY dept_name;
