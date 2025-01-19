@@ -38,12 +38,12 @@ and much, much more...
 </br>
 
 <div align="center">
-    <img src="https://github.com/Syed-Moinuddin2025/SQL-Basics-for-All/blob/main/images/PostgreSQLCheatSheet-4.png" alt="postgreSQL" width="800" height="auto">
+    <img src="https://raw.githubusercontent.com/Syed-Moinuddin2025/PostgreSQL-Basics-for-All/main/images/postgreSQL-Image2.png" alt="postgreSQL-Image2" width="800" height="auto">
 </div>
 
 
 
-
+ 
 
  
 
