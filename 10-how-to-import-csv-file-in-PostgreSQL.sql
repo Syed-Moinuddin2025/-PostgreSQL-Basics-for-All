@@ -19,4 +19,5 @@ CSV HEADER;
 
 SELECT * FROM employee2;
 
- 
+
+SELECT * FROM employee2 ORDER BY employee_id  ASC
