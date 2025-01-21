@@ -64,9 +64,12 @@ SELECT * FROM employees;
     FROM employees
     GROUP BY dept_name;
 -- Q13: Find employees who are older than 30 years.
-    
+    SELECT * FROM employees
+    WHERE age > 30;
 -- Q14: Find the highest salary in the IT department.
-    
+    SELECT   MAX(salary) AS highest_salary
+    FROM employees 
+    WHERE dept_name = 'IT';
 -- Q15: Update the email column for all employees with appropriate values.
     
 -- Q16: Find the total number of employees in each department.
