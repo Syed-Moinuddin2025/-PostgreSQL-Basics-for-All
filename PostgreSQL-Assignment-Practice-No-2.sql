@@ -21,64 +21,67 @@ VALUES
     ('David', 'Jones', 'IT', 75000, '2018-08-30', 36, NULL),
     ('Sophia', 'Williams', 'HR', 47000, '2020-12-15', NULL, 'sophia.williams@example.com');
     SELECT * FROM employees3;
-    
-Retrieve the first name, last name, and salary of employees earning more than the average salary.
+ 
+-- 1. Retrieve the first name, last name, and salary of employees earning more than the average salary.
 
-Count the number of employees in each department where the department name starts with 'M'.
+-- 2. Count the number of employees in each department where the department name starts with 'M'.
 
-Retrieve employees who do not have an email address (email is NULL).
+-- 3. Retrieve employees who do not have an email address (email is NULL).
 
-Calculate the total salary paid to employees in each department.
+-- 4. Calculate the total salary paid to employees in each department.
 
-Update the department of employees whose salary is less than 30,000 to 'Trainee'.
+-- 5. Update the department of employees whose salary is less than 30,000 to 'Trainee'.
 
-Delete employees whose joining date is before January 1, 2020.
+-- 6. Delete employees whose joining date is before January 1, 2020.
 
-Retrieve the top 5 highest-paid employees.
+-- 7. Retrieve the top 5 highest-paid employees.
 
-Find the names of employees who joined in the same month, regardless of the year.
+-- 8. Find the names of employees who joined in the same month, regardless of the year.
 
-Add a new column phone_number to the employee2 table with a data type of VARCHAR(15).
+-- 9. Add a new column phone_number to the employee2 table with a data type of VARCHAR(15).
 
-Update the phone_number of all employees to '1234567890'.
+-- 10. Update the phone_number of all employees to '1234567890'.
 
-Find employees whose first name ends with the letter 'n'.
+-- 11. Find employees whose first name ends with the letter 'n'.
 
-Retrieve employees whose age is between 25 and 35, and salary is greater than 50,000.
+-- 12. Retrieve employees whose age is between 25 and 35, and salary is greater than 50,000.
 
-Add a constraint to ensure that the email column in employee2 is unique.
+-- 13. Add a constraint to ensure that the email column in employee2 is unique.
 
-Find employees who are in the 'HR' or 'Finance' department.
+-- 14. Find employees who are in the 'HR' or 'Finance' department.
 
-Retrieve the second highest salary in the employee2 table.
+-- 15. Retrieve the second highest salary in the employee2 table.
 
-Create a view named high_salary_employees that retrieves employees with a salary above 70,000.
+-- 16. Create a view named high_salary_employees that retrieves employees with a salary above 70,000.
 
-Insert a new record into employee2 with NULL for the age and email columns.
+-- 17. Insert a new record into employee2 with NULL for the age and email columns.
 
-Retrieve employees who joined in the last 6 months from today’s date.
+-- 18. Retrieve employees who joined in the last 6 months from today’s date.
 
-Update the salary of employees earning the minimum salary to 40,000.
+-- 19. Update the salary of employees earning the minimum salary to 40,000.
 
-Find employees whose last names contain exactly 5 characters.
+-- 20. Find employees whose last names contain exactly 5 characters.
 
-Retrieve employees sorted first by department name (ascending) and then by salary (descending).
+-- 21. Retrieve employees sorted first by department name (ascending) and then by salary (descending).
 
-Find the department with the maximum number of employees.
+-- 22. Find the department with the maximum number of employees.
 
-Calculate the difference in days between today’s date and each employee’s joining date.
+-- 23. Calculate the difference in days between today’s date and each employee’s joining date.
 
-Retrieve employees whose first and last names are identical (e.g., first_name = last_name).
+-- 24. Retrieve employees whose first and last names are identical (e.g., first_name = last_name).
 
-Create a backup table named employee2_backup and copy all the data from employee2.
+-- 25. Create a backup table named employee2_backup and copy all the data from employee2.
 
-Retrieve all employees who do not belong to the 'IT' department.
+-- 26. Retrieve all employees who do not belong to the 'IT' department.
 
-Find employees whose salary is a multiple of 5000.
+-- 27. Find employees whose salary is a multiple of 5000.
 
-Delete duplicate rows in the employee2 table based on first name and last name.
+-- 28. Delete duplicate rows in the employee2 table based on first name and last name.
 
-Update the email column of all employees to include their department (e.g., john.doe@it.example.com).
+-- 29. Update the email column of all employees to include their department (e.g., john.doe@it.example.com).
 
-Create an index on the salary column to improve query performance for salary-based searches.
+-- 30. Create an index on the salary column to improve query performance for salary-based searches.
 
+
+
+ 
