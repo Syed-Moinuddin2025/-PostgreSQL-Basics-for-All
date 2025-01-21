@@ -97,7 +97,9 @@ SELECT * FROM employees WHERE first_name LIKE '%a%';
 SELECT COUNT(*) AS total_employees FROM employees;
 
 -- 19. Retrieve employees grouped by their department, sorted by department name.
-SELECT * FROM employees
+SELECT department, COUNT (*) AS total_employees
+FROM employees
+GROUP BY department
 ORDER BY department;
 
 -- 20. Find employees who joined in the year 2023.
