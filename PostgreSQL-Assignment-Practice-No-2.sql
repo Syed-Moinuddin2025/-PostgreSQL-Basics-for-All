@@ -33,7 +33,7 @@ WHERE department = 'IT';
 --DELETE FROM employees WHERE age > 34;
 
 -- 4. Retrieve the names of employees who joined after January 1, 2021.
-SELECT first_name FROM employees
+SELECT first_name ,joining_date FROM employees
 WHERE joining_date > '2021-01-01';
 
 -- 5. Change the data type of the `salary` column to `INTEGER`.
