@@ -1,3 +1,4 @@
+CREATE DATABASE syed_moin;
 CREATE TABLE IF NOT EXISTS employees3 (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
