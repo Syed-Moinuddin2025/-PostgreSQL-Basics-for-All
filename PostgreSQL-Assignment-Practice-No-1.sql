@@ -23,7 +23,8 @@ SELECT * FROM employee2;
     SELECT first_name,department FROM employee2;
 -- Q2: Update the salary of all employees in the 'IT' department by increasing it by 10%.
     UPDATE employee2
-    SET salary = salary+(salary*0.1);
+    SET salary = salary+(salary*0.1)
+    WHERE dept_name = 'IT';
 -- Q3: Delete all employees who are older than 34 years.
     DELETE FROM employee2
     WHERE age >34
@@ -73,7 +74,7 @@ SELECT * FROM employee2;
     SELECT * FROM employee2
     ORDER BY joining_date DESC;
 -- Q18: Retrieve employees whose salary is between 50,000 and 70,000.
-    SELECT salary FROM employee2
+    SELECT first_name,last_name,salary FROM employee2
     WHERE salary BETWEEN 50000 AND 70000;
 -- Q19: Find employees who have 'a' in their first name.
    SELECT * FROM employee2
