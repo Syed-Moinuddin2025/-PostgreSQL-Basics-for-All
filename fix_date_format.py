@@ -2,7 +2,7 @@ import pandas as pd
 
 # CSV file ka path
 file_path = r"D:\GiHubProjects\SQL-Basics-for-All\employee_data.csv"  # Input file path
-output_path = r"D:\GiHubProjects\SQL-Basics-for-All\employee_data_cleaned.csv"  # Output file path
+output_path = r"D:\GiHubProjects\SQL-Basics-for-All\employee_data_cleaned_1.csv"  # Output file path
 
 # CSV file load karo
 df = pd.read_csv(file_path)
