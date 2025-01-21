@@ -20,7 +20,7 @@ CSV HEADER;
 SELECT * FROM employees;
 
 -- Q1: Retrieve all employees’ first_name and their departments.
-    
+    SELECT first_name,department FROM employees;
 -- Q2: Update the salary of all employees in the 'IT' department by increasing it by 10%.
     
 -- Q3: Delete all employees who are older than 34 years.
