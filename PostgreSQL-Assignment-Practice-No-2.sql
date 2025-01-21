@@ -40,6 +40,9 @@ WHERE joining_date > '2021-01-01';
 ALTER TABLE employees 
 ALTER COLUMN salary TYPE INTEGER;
 
+ALTER TABLE employees
+ALTER COLUMN employee_id TYPE SMALLINT;
+
 -- 6. List all employees with their age and salary in descending order of salary.
 SELECT first_name, age, salary 
 FROM employees
@@ -94,7 +97,8 @@ SELECT * FROM employees WHERE first_name LIKE '%a%';
 SELECT COUNT(*) AS total_employees FROM employees;
 
 -- 19. Retrieve employees grouped by their department, sorted by department name.
-SELECT * FROM employees ORDER BY department;
+SELECT * FROM employees
+ORDER BY department;
 
 -- 20. Find employees who joined in the year 2023.
 SELECT * FROM employees 
@@ -114,6 +118,9 @@ WHERE salary > (SELECT AVG(salary) FROM employees);
 -- 24. Count the number of employees in each department where the department name starts with 'M'.
 SELECT department, COUNT(*) AS total_employees FROM employees 
 WHERE department LIKE 'M%' GROUP BY department;
+
+SELECT department, COUNT(*) AS total_employees FROM employees 
+WHERE department LIKE '%T' GROUP BY department;
 
 -- 25. Retrieve employees who do not have an email address (email is NULL).
 SELECT * FROM employees WHERE email IS NULL;
@@ -195,10 +202,9 @@ SELECT * FROM employees WHERE department != 'IT';
 -- 49. Find employees whose salary is a multiple of 5000.
 SELECT * FROM employees WHERE salary % 5000 = 0;
 
--- 50. Delete duplicate rows in the employee2 table based on first name and last name.
-DELETE FROM employee2 WHERE id NOT IN (
-  SELECT MIN(id) FROM employee2 GROUP BY first_name, last_name
-);
+-- 50. Delete duplicate rows in the employees table based on first name and last name.
+DELETE FROM employees
+WHERE employee_id NOT IN (SELECT MIN(employee_id) FROM employees GROUP BY first_name, last_name);
 
 -- 51. Update the email column of all employees to include their department (e.g., john.doe@it.example.com).
 UPDATE employees SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(department), '.example.com');
