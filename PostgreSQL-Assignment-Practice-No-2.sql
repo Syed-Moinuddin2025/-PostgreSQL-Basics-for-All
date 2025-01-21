@@ -1,5 +1,4 @@
-CREATE DATABASE syed_moin;
-CREATE TABLE IF NOT EXISTS employees3 (
+CREATE TABLE IF NOT EXISTS employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
@@ -9,7 +8,7 @@ CREATE TABLE IF NOT EXISTS employees3 (
     age INTEGER,
     email VARCHAR(100)
 );
-INSERT INTO employees3 (first_name, last_name, dept_name, salary, joining_date, age, email)
+INSERT INTO employees (first_name, last_name, department, salary, joining_date, age, email)
 VALUES
     ('John', 'Doe', 'IT', 60000, '2021-06-15', 30, 'john.doe@example.com'),
     ('Jane', 'Smith', 'HR', 45000, '2020-09-23', 35, 'jane.smith@example.com'),
@@ -21,12 +20,9 @@ VALUES
     ('Anita', 'Sharma', 'Marketing', 60000, '2023-02-20', 27, 'anita.sharma@example.com'),
     ('David', 'Jones', 'IT', 75000, '2018-08-30', 36, NULL),
     ('Sophia', 'Williams', 'HR', 47000, '2020-12-15', NULL, 'sophia.williams@example.com');
-    SELECT * FROM employees3;
--- Refined and organized SQL queries for revision:
 
 -- 1. Retrieve all employees’ first_name and their departments.
 SELECT first_name, department FROM employees;
-
 -- 2. Update the salary of all employees in the 'IT' department by increasing it by 10%.
 UPDATE employees SET salary = salary * 1.10 WHERE department = 'IT';
 
@@ -190,6 +186,4 @@ UPDATE employees SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@
 -- 52. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employees (salary);
 
-
-
- 
+    
