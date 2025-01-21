@@ -44,6 +44,7 @@ SELECT * FROM employees;
     ALTER TABLE employees
     ALTER COLUMN salary TYPE INTEGER USING salary::INTEGER;
 -- Q8: List all employees with their age and salary in descending order of salary.
+
     SELECT first_name , age, salary 
     FROM employees
     ORDER BY salary DESC;
