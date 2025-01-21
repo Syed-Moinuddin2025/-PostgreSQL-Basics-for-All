@@ -22,12 +22,16 @@ SELECT * FROM employees;
 -- Q1: Retrieve all employees’ first_name and their departments.
     SELECT first_name,department FROM employees;
 -- Q2: Update the salary of all employees in the 'IT' department by increasing it by 10%.
-    
--- Q3: Delete all employees who are older than 34 years.
-    
+    UPDATE employees
+    SET salary = salary+(salary * 0.1)
+    WHERE department = 'IT';
+-- Q3: Delete all employees who are older than 58 years.
+    DELETE FROM employees    
+    WHERE age >58;
     SELECT * FROM employees ORDER By employee_id ASC;
+
 -- Q4: Add a new column `email` to the `employees` table.
-    
+   
 -- Q5: Rename the `department` column to `dept_name`. 
    
 -- Q6: Retrieve the names of employees who joined after January 1, 2021.
