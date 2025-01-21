@@ -41,19 +41,26 @@ SELECT * FROM employees;
     SELECT * FROM employees
     WHERE joining_date > '2021,01,01';
 -- Q7: Change the data type of the `salary` column to `INTEGER`.
-    ALTER TABLE employee
+    ALTER TABLE employees
     ALTER COLUMN salary TYPE INTEGER USING salary::INTEGER;
 -- Q8: List all employees with their age and salary in descending order of salary.
-    
+    SELECT first_name , age, salary 
+    FROM employees
+    ORDER BY salary DESC;
 -- Q9: Insert a new employee with the following details: 
 -- (employee_id,'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30)
-    
+    INSERT INTO employees
+    VALUES(1001,'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30);
 -- Q10: Update age of employee +1 to every employee 
-    
+    UPDATE employees
+    SET age = age + 1;
 -- Q11: Find all employees who joined after 2022-01-01.
-    
+    SELECT * FROM employees
+    WHERE joining_date > '2022,01,01'
 -- Q12: Find the average salary of employees in each department.
-    
+
+    SELECT dept_name, AVG(salary) AS avrage_salary
+    GROUP BY dept_name;
 -- Q13: Find employees who are older than 30 years.
     
 -- Q14: Find the highest salary in the IT department.
