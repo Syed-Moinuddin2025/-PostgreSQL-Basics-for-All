@@ -22,49 +22,67 @@ VALUES
     ('Sophia', 'Williams', 'HR', 47000, '2020-12-15', NULL, 'sophia.williams@example.com');
 
 -- 1. Retrieve all employees’ first_name and their departments.
-SELECT first_name, department FROM employees;
+SELECT first_name, department
+FROM employees;
+
 -- 2. Update the salary of all employees in the 'IT' department by increasing it by 10%.
-UPDATE employees SET salary = salary * 1.10 WHERE department = 'IT';
+UPDATE employees SET salary = salary * 1.10 
+WHERE department = 'IT';
 
 -- 3. Delete all employees who are older than 34 years.
-DELETE FROM employees WHERE age > 34;
+--DELETE FROM employees WHERE age > 34;
 
 -- 4. Retrieve the names of employees who joined after January 1, 2021.
-SELECT first_name FROM employees WHERE joining_date > '2021-01-01';
+SELECT first_name FROM employees
+WHERE joining_date > '2021-01-01';
 
 -- 5. Change the data type of the `salary` column to `INTEGER`.
-ALTER TABLE employees ALTER COLUMN salary TYPE INTEGER;
+ALTER TABLE employees 
+ALTER COLUMN salary TYPE INTEGER;
 
 -- 6. List all employees with their age and salary in descending order of salary.
-SELECT first_name, age, salary FROM employees ORDER BY salary DESC;
+SELECT first_name, age, salary 
+FROM employees
+ORDER BY salary DESC;
 
 -- 7. Insert a new employee with the following details: (employee_id, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, email).
 INSERT INTO employees (employee_id, first_name, last_name, department, salary, joining_date, age, email) 
-VALUES (employee_id, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, email);
+VALUES (11, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30,NULL);
 
 -- 8. Update age of employee +1 to every employee.
-UPDATE employees SET age = age + 1;
+UPDATE employees 
+SET age = age + 1;
 
 -- 9. Find all employees who joined after 2022-01-01.
-SELECT * FROM employees WHERE joining_date > '2022-01-01';
+SELECT * FROM employees 
+WHERE joining_date > '2022-01-01';
 
 -- 10. Find the average salary of employees in each department.
-SELECT department, AVG(salary) AS average_salary FROM employees GROUP BY department;
+SELECT department, AVG(salary) AS average_salary 
+FROM employees
+GROUP BY department;
 
 -- 11. Find employees who are older than 30 years.
-SELECT * FROM employees WHERE age > 30;
+SELECT * FROM employees
+WHERE age > 30;
 
 -- 12. Find the highest salary in the IT department.
-SELECT MAX(salary) AS highest_salary FROM employees WHERE department = 'IT';
+SELECT MAX(salary) AS highest_salary
+FROM employees 
+WHERE department = 'IT';
 
 -- 13. Update the email column for all employees with appropriate values.
-UPDATE employees SET email = CONCAT(first_name, '.', last_name, '@example.com');
+UPDATE employees
+SET email = CONCAT(first_name, '.', last_name, '@example.com');
 
 -- 14. Find the total number of employees in each department.
-SELECT department, COUNT(*) AS total_employees FROM employees GROUP BY department;
+SELECT department, COUNT(*) AS total_employees 
+FROM employees 
+GROUP BY department;
 
 -- 15. Sort employees by their joining_date from the newest to the oldest.
-SELECT * FROM employees ORDER BY joining_date DESC;
+SELECT * FROM employees
+ORDER BY joining_date DESC;
 
 -- 16. Retrieve employees whose salary is between 50,000 and 70,000.
 SELECT * FROM employees WHERE salary BETWEEN 50000 AND 70000;
@@ -79,10 +97,12 @@ SELECT COUNT(*) AS total_employees FROM employees;
 SELECT * FROM employees ORDER BY department;
 
 -- 20. Find employees who joined in the year 2023.
-SELECT * FROM employees WHERE EXTRACT(YEAR FROM joining_date) = 2023;
+SELECT * FROM employees 
+WHERE EXTRACT(YEAR FROM joining_date) = 2023;
 
 -- 21. Retrieve the minimum salary in the company.
-SELECT MIN(salary) AS minimum_salary FROM employees;
+SELECT MIN(salary) AS minimum_salary 
+FROM employees;
 
 -- 22. Retrieve employees whose age is NULL.
 SELECT * FROM employees WHERE age IS NULL;
@@ -186,4 +206,4 @@ UPDATE employees SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@
 -- 52. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employees (salary);
 
-    
+ SELECT * FROM employees;   
