@@ -49,7 +49,7 @@ SELECT * FROM employees;
     ORDER BY salary DESC;
 -- Q9: Insert a new employee with the following details: 
 -- (employee_id,'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30)
-    INSERT INTO employees
+    INSERT INTO employees(employee_id, first_name, last_name,  dept_name, salary, joining_date, age)
     VALUES(1001,'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30);
 -- Q10: Update age of employee +1 to every employee 
     UPDATE employees
@@ -60,6 +60,7 @@ SELECT * FROM employees;
 -- Q12: Find the average salary of employees in each department.
 
     SELECT dept_name, AVG(salary) AS avrage_salary
+    FROM employees
     GROUP BY dept_name;
 -- Q13: Find employees who are older than 30 years.
     
