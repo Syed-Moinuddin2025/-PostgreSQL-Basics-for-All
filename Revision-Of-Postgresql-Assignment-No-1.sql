@@ -28,17 +28,21 @@ SELECT * FROM employees;
 -- Q3: Delete all employees who are older than 58 years.
     DELETE FROM employees    
     WHERE age >58;
+    
     SELECT * FROM employees ORDER By employee_id ASC;
 
 -- Q4: Add a new column `email` to the `employees` table.
-   
+    ALTER TABLE employees
+    ADD COLUMN email VARCHAR(255);
 -- Q5: Rename the `department` column to `dept_name`. 
-   
+   ALTER TABLE employees
+   RENAME COLUMN department TO dept_name;
 -- Q6: Retrieve the names of employees who joined after January 1, 2021.
-    
+    SELECT * FROM employees
+    WHERE joining_date > '2021,01,01';
 -- Q7: Change the data type of the `salary` column to `INTEGER`.
-   
-    
+    ALTER TABLE employee
+    ALTER COLUMN salary TYPE INTEGER USING salary::INTEGER;
 -- Q8: List all employees with their age and salary in descending order of salary.
     
 -- Q9: Insert a new employee with the following details: 
