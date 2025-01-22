@@ -20,9 +20,9 @@ VALUES
     ('Anita', 'Sharma', 'Marketing', 60000, '2023-02-20', 27, 'anita.sharma@example.com'),
     ('David', 'Jones', 'IT', 75000, '2018-08-30', 36, NULL),
     ('Sophia', 'Williams', 'HR', 47000, '2020-12-15', NULL, 'sophia.williams@example.com');
-
+SELECT * FROM employees; 
 -- 1. Retrieve all employees’ first_name and their departments.
-SELECT first_name, department
+SELECT first_name, dept_name
 FROM employees;
 
 -- 2. Update the salary of all employees in the 'IT' department by increasing it by 10%.
@@ -72,29 +72,32 @@ WHERE age > 30;
 -- 12. Find the highest salary in the IT department.
 SELECT MAX(salary) AS highest_salary
 FROM employees 
-WHERE department = 'IT';
+WHERE dept_name = 'IT';
 
 -- 13. Update the email column for all employees with appropriate values.
 UPDATE employees
 SET email = CONCAT(first_name, '.', last_name, '@example.com');
 
 -- 14. Find the total number of employees in each department.
-SELECT department, COUNT(*) AS total_employees 
+SELECT dept_name, COUNT(*) AS total_employees 
 FROM employees 
-GROUP BY department;
+GROUP BY dept_name;
 
 -- 15. Sort employees by their joining_date from the newest to the oldest.
 SELECT * FROM employees
 ORDER BY joining_date DESC;
 
 -- 16. Retrieve employees whose salary is between 50,000 and 70,000.
-SELECT * FROM employees WHERE salary BETWEEN 50000 AND 70000;
+SELECT * FROM employees
+WHERE salary BETWEEN 50000 AND 70000;
 
 -- 17. Find employees who have 'a' in their first name.
-SELECT * FROM employees WHERE first_name LIKE '%a%';
+SELECT * FROM employees
+WHERE first_name LIKE '%a%';
 
 -- 18. Count the total number of employees in the table.
-SELECT COUNT(*) AS total_employees FROM employees;
+SELECT COUNT(*) AS total_employees 
+FROM employees;
 
 -- 19. Retrieve employees grouped by their department, sorted by department name.
 SELECT department, COUNT (*) AS total_employees
@@ -118,11 +121,8 @@ SELECT first_name, last_name, salary FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);
 
 -- 24. Count the number of employees in each department where the department name starts with 'M'.
-SELECT department, COUNT(*) AS total_employees FROM employees 
-WHERE department LIKE 'M%' GROUP BY department;
-
-SELECT department, COUNT(*) AS total_employees FROM employees 
-WHERE department LIKE '%T' GROUP BY department;
+SELECT dept_name, COUNT(*) AS total_employees FROM employees 
+WHERE dept_name LIKE 'M%' GROUP BY dept_name;
 
 -- 25. Retrieve employees who do not have an email address (email is NULL).
 SELECT * FROM employees WHERE email IS NULL;
@@ -131,10 +131,13 @@ SELECT * FROM employees WHERE email IS NULL;
 SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department;
 
 -- 27. Update the department of employees whose salary is less than 30,000 to 'Trainee'.
-UPDATE employees SET department = 'Trainee' WHERE salary < 30000;
+UPDATE employees 
+SET department = 'Trainee' 
+WHERE salary < 30000;
 
 -- 28. Delete employees whose joining date is before January 1, 2020.
-DELETE FROM employees WHERE joining_date < '2020-01-01';
+DELETE FROM employees 
+WHERE joining_date < '2020-01-01';
 
 -- 29. Retrieve the top 5 highest-paid employees.
 SELECT * FROM employees ORDER BY salary DESC LIMIT 5;
@@ -153,13 +156,15 @@ UPDATE employee2 SET phone_number = '1234567890';
 SELECT * FROM employees WHERE first_name LIKE '%n';
 
 -- 34. Retrieve employees whose age is between 25 and 35, and salary is greater than 50,000.
-SELECT * FROM employees WHERE age BETWEEN 25 AND 35 AND salary > 50000;
+SELECT * FROM employees 
+WHERE age BETWEEN 25 AND 35 AND salary > 50000;
 
 -- 35. Add a constraint to ensure that the email column in employee2 is unique.
 ALTER TABLE employee2 ADD CONSTRAINT unique_email UNIQUE (email);
 
 -- 36. Find employees who are in the 'HR' or 'Finance' department.
-SELECT * FROM employees WHERE department IN ('HR', 'Finance');
+SELECT * FROM employees
+WHERE department IN ('HR', 'Finance');
 
 -- 37. Retrieve the second highest salary in the employee2 table.
 SELECT MAX(salary) AS second_highest_salary FROM employee2 
@@ -174,10 +179,12 @@ INSERT INTO employee2 (employee_id, first_name, last_name, department, salary, j
 VALUES (employee_id, 'First', 'Last', 'Department', 50000, '2025-01-01', NULL, NULL);
 
 -- 40. Retrieve employees who joined in the last 6 months from today’s date.
-SELECT * FROM employees WHERE joining_date >= CURRENT_DATE - INTERVAL '6 months';
+SELECT * FROM employees 
+WHERE joining_date >= CURRENT_DATE - INTERVAL '6 months';
 
 -- 41. Update the salary of employees earning the minimum salary to 40,000.
-UPDATE employees SET salary = 40000 WHERE salary = (SELECT MIN(salary) FROM employees);
+UPDATE employees
+SET salary = 40000 WHERE salary = (SELECT MIN(salary) FROM employees);
 
 -- 42. Find employees whose last names contain exactly 5 characters.
 SELECT * FROM employees WHERE LENGTH(last_name) = 5;
@@ -190,28 +197,32 @@ SELECT department, COUNT(*) AS total_employees FROM employees
 GROUP BY department ORDER BY total_employees DESC LIMIT 1;
 
 -- 45. Calculate the difference in days between today’s date and each employee’s joining date.
-SELECT first_name, last_name, (CURRENT_DATE - joining_date) AS days_with_company FROM employees;
+SELECT first_name, last_name, (CURRENT_DATE - joining_date) AS days_with_company 
+FROM employees;
 
 -- 46. Retrieve employees whose first and last names are identical (e.g., first_name = last_name).
 SELECT * FROM employees WHERE first_name = last_name;
 
 -- 47. Create a backup table named employee2_backup and copy all the data from employee2.
-CREATE TABLE employee2_backup AS TABLE employee2;
+CREATE TABLE employees_backup AS TABLE employees;
 
 -- 48. Retrieve all employees who do not belong to the 'IT' department.
-SELECT * FROM employees WHERE department != 'IT';
+SELECT * FROM employees
+WHERE department != 'IT';
 
 -- 49. Find employees whose salary is a multiple of 5000.
-SELECT * FROM employees WHERE salary % 5000 = 0;
+SELECT * FROM employees 
+WHERE salary % 5000 = 0;
 
 -- 50. Delete duplicate rows in the employees table based on first name and last name.
 DELETE FROM employees
 WHERE employee_id NOT IN (SELECT MIN(employee_id) FROM employees GROUP BY first_name, last_name);
 
 -- 51. Update the email column of all employees to include their department (e.g., john.doe@it.example.com).
-UPDATE employees SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(department), '.example.com');
+UPDATE employees 
+SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(dept_name), '.example.com');
 
 -- 52. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employees (salary);
 
- SELECT * FROM employees;   
+SELECT * FROM employees;   
