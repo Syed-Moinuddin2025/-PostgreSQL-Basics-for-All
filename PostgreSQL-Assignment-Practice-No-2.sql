@@ -1,3 +1,4 @@
+-- Active: 1737382478309@@127.0.0.1@5432@syed_moin
 CREATE TABLE IF NOT EXISTS employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),

@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS employee2;
+DROP TABLE IF EXISTS employees;
 
-CREATE TABLE employee2(
+CREATE TABLE employees(
 	employee_id	INT	PRIMARY KEY,
 	first_name VARCHAR(20) NOT NULL,
 	last_name VARCHAR(20) NOT NULL,
@@ -11,15 +11,15 @@ CREATE TABLE employee2(
 	age INT	
 );
 
-SELECT * FROM employee2;
+SELECT * FROM employees;
 
 COPY
-employee2(employee_id, first_name, last_name, email, department, salary, joining_date, age)
-FROM 'D:\GiHubProjects\SQL-Basics-for-All\CSV files\employee_data_cleaned_1.csv'
+employees(employee_id, first_name, last_name, email, department, salary, joining_date, age)
+FROM 'D:\GiHubProjects\SQL-Basics-for-All\CSV files\employees_data_Queries-Operators.csv'
 DELIMITER','
 CSV HEADER;
 
-SELECT * FROM employee2 ORDER BY employee_id ASC;
+SELECT * FROM employees ORDER BY employee_id ASC;
 -- Refined and ordered queries for the table 'employee2'
 
 -- 1. Retrieve all employees’ first_name and their departments.
@@ -41,7 +41,7 @@ ORDER BY salary DESC;
 
 -- 5. Insert a new employee with the following details: (employee_id, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, email).
 INSERT INTO employee2 (employee_id, first_name, last_name, department, salary, joining_date, age, email) 
-VALUES (11, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, NULL);
+VALUES (1001, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, NULL);
 
 -- 6. Update age of employee +1 to every employee.
 UPDATE employee2 
