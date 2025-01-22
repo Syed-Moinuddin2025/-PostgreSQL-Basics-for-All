@@ -19,8 +19,9 @@ FROM 'D:\GiHubProjects\SQL-Basics-for-All\CSV files\employee_data_cleaned_1.csv'
 DELIMITER','
 CSV HEADER;
 
--- Refined and ordered queries for the table 'employee2'
 SELECT * FROM employee2 ORDER BY employee_id ASC;
+-- Refined and ordered queries for the table 'employee2'
+
 -- 1. Retrieve all employees’ first_name and their departments.
 SELECT first_name, department
 FROM employee2;
@@ -166,7 +167,7 @@ SELECT * FROM employee2 WHERE salary > 70000;
 
 -- 37. Insert a new record into employee2 with NULL for the age and email columns.
 INSERT INTO employee2 (employee_id, first_name, last_name, department, salary, joining_date, age, email) 
-VALUES (employee_id, 'First', 'Last', 'Department', 50000, '2025-01-01', NULL, NULL);
+VALUES (employee_id, 'First', 'Last', 'department', 50000, '2025-01-01', NULL, NULL);
 
 -- 38. Retrieve employees who joined in the last 6 months from today’s date.
 SELECT * FROM employee2 
