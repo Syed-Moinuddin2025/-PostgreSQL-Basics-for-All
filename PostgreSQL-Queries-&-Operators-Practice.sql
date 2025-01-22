@@ -1,4 +1,4 @@
--- Active: 1737382478309@@127.0.0.1@5432@company
+-- Active: 1737382478309@@127.0.0.1@5432@syed_moin
 DROP TABLE IF EXISTS employees;
 
 CREATE TABLE employees(
