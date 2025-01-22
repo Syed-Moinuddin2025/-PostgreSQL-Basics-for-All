@@ -225,4 +225,4 @@ SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(dept_nam
 -- 52. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employees (salary);
 
-SELECT * FROM employees;   
+SELECT * FROM employees ORDER BY employee_id ASC;   
