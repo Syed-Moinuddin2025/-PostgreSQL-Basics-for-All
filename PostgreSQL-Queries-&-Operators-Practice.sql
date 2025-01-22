@@ -22,12 +22,12 @@ CSV HEADER;
 -- Refined and ordered queries for the table 'employee2'
 SELECT * FROM employee2 ORDER BY employee_id ASC;
 -- 1. Retrieve all employees’ first_name and their departments.
-SELECT first_name, dept_name
+SELECT first_name, department
 FROM employee2;
 
 -- 2. Update the salary of all employees in the 'IT' department by increasing it by 10%.
 UPDATE employee2 SET salary = salary * 1.10 
-WHERE dept_name = 'IT';
+WHERE department = 'IT';
 
 -- 3. Retrieve the names of employees who joined after January 1, 2021.
 SELECT first_name, joining_date FROM employee2
@@ -39,7 +39,7 @@ FROM employee2
 ORDER BY salary DESC;
 
 -- 5. Insert a new employee with the following details: (employee_id, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, email).
-INSERT INTO employee2 (employee_id, first_name, last_name, dept_name, salary, joining_date, age, email) 
+INSERT INTO employee2 (employee_id, first_name, last_name, department, salary, joining_date, age, email) 
 VALUES (11, 'Raj', 'Singh', 'Marketing', 60000, '2023-09-15', 30, NULL);
 
 -- 6. Update age of employee +1 to every employee.
@@ -51,9 +51,9 @@ SELECT * FROM employee2
 WHERE joining_date > '2022-01-01';
 
 -- 8. Find the average salary of employees in each department.
-SELECT dept_name, AVG(salary) AS average_salary 
+SELECT department, AVG(salary) AS average_salary 
 FROM employee2
-GROUP BY dept_name;
+GROUP BY department;
 
 -- 9. Find employees who are older than 30 years.
 SELECT * FROM employee2
@@ -62,16 +62,16 @@ WHERE age > 30;
 -- 10. Find the highest salary in the IT department.
 SELECT MAX(salary) AS highest_salary
 FROM employee2 
-WHERE dept_name = 'IT';
+WHERE department = 'IT';
 
 -- 11. Update the email column for all employees with appropriate values.
 UPDATE employee2
 SET email = CONCAT(first_name, '.', last_name, '@example.com');
 
 -- 12. Find the total number of employees in each department.
-SELECT dept_name, COUNT(*) AS total_employees 
+SELECT department, COUNT(*) AS total_employees 
 FROM employee2 
-GROUP BY dept_name;
+GROUP BY department;
 
 -- 13. Sort employees by their joining_date from the newest to the oldest.
 SELECT * FROM employee2
@@ -90,10 +90,10 @@ SELECT COUNT(*) AS total_employees
 FROM employee2;
 
 -- 17. Retrieve employees grouped by their department, sorted by department name.
-SELECT dept_name, COUNT(*) AS total_employees
+SELECT department, COUNT(*) AS total_employees
 FROM employee2
-GROUP BY dept_name
-ORDER BY dept_name;
+GROUP BY department
+ORDER BY department;
 
 -- 18. Find employees who joined in the year 2023.
 SELECT * FROM employee2 
@@ -111,18 +111,18 @@ SELECT first_name, last_name, salary FROM employee2
 WHERE salary > (SELECT AVG(salary) FROM employee2);
 
 -- 22. Count the number of employees in each department where the department name starts with 'M'.
-SELECT dept_name, COUNT(*) AS total_employees FROM employee2 
-WHERE dept_name LIKE 'M%' GROUP BY dept_name;
+SELECT department, COUNT(*) AS total_employees FROM employee2 
+WHERE department LIKE 'M%' GROUP BY department;
 
 -- 23. Retrieve employees who do not have an email address (email is NULL).
 SELECT * FROM employee2 WHERE email IS NULL;
 
 -- 24. Calculate the total salary paid to employees in each department.
-SELECT dept_name, SUM(salary) AS total_salary FROM employee2 GROUP BY dept_name;
+SELECT department, SUM(salary) AS total_salary FROM employee2 GROUP BY department;
 
 -- 25. Update the department of employees whose salary is less than 30,000 to 'Trainee'.
 UPDATE employee2 
-SET dept_name = 'Trainee' 
+SET department = 'Trainee' 
 WHERE salary < 30000;
 
 -- 26. Delete employees whose joining date is before January 1, 2020.
@@ -154,7 +154,7 @@ ALTER TABLE employee2 ADD CONSTRAINT unique_email UNIQUE (email);
 
 -- 34. Find employees who are in the 'HR' or 'Finance' department.
 SELECT * FROM employee2
-WHERE dept_name IN ('HR', 'Finance');
+WHERE department IN ('HR', 'Finance');
 
 -- 35. Retrieve the second highest salary in the employee2 table.
 SELECT MAX(salary) AS second_highest_salary FROM employee2 
@@ -165,7 +165,7 @@ CREATE VIEW high_salary_employees AS
 SELECT * FROM employee2 WHERE salary > 70000;
 
 -- 37. Insert a new record into employee2 with NULL for the age and email columns.
-INSERT INTO employee2 (employee_id, first_name, last_name, dept_name, salary, joining_date, age, email) 
+INSERT INTO employee2 (employee_id, first_name, last_name, department, salary, joining_date, age, email) 
 VALUES (employee_id, 'First', 'Last', 'Department', 50000, '2025-01-01', NULL, NULL);
 
 -- 38. Retrieve employees who joined in the last 6 months from today’s date.
@@ -180,11 +180,11 @@ SET salary = 40000 WHERE salary = (SELECT MIN(salary) FROM employee2);
 SELECT * FROM employee2 WHERE LENGTH(last_name) = 5;
 
 -- 41. Retrieve employees sorted first by department name (ascending) and then by salary (descending).
-SELECT * FROM employee2 ORDER BY dept_name ASC, salary DESC;
+SELECT * FROM employee2 ORDER BY department ASC, salary DESC;
 
 -- 42. Find the department with the maximum number of employees.
-SELECT dept_name, COUNT(*) AS total_employees FROM employee2 
-GROUP BY dept_name ORDER BY total_employees DESC LIMIT 1;
+SELECT department, COUNT(*) AS total_employees FROM employee2 
+GROUP BY department ORDER BY total_employees DESC LIMIT 1;
 
 -- 43. Calculate the difference in days between today’s date and each employee’s joining date.
 SELECT first_name, last_name, (CURRENT_DATE - joining_date) AS days_with_company 
@@ -198,7 +198,7 @@ CREATE TABLE employee2_backup AS TABLE employee2;
 
 -- 46. Retrieve all employees who do not belong to the 'IT' department.
 SELECT * FROM employee2
-WHERE dept_name != 'IT';
+WHERE department != 'IT';
 
 -- 47. Find employees whose salary is a multiple of 5000.
 SELECT * FROM employee2 
@@ -210,7 +210,7 @@ WHERE employee_id NOT IN (SELECT MIN(employee_id) FROM employee2 GROUP BY first_
 
 -- 49. Update the email column of all employees to include their department (e.g., john.doe@it.example.com).
 UPDATE employee2 
-SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(dept_name), '.example.com');
+SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(department), '.example.com');
 
 -- 50. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employee2 (salary);
