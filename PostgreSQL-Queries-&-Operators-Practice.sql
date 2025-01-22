@@ -27,8 +27,9 @@ SELECT * FROM employees ORDER BY employee_id ASC;
 SELECT first_name, department
 FROM employees;
 
--- 2. Update the salary of all employees in the 'IT' department by increasing it by 10%.
-UPDATE employees SET salary = salary * 1.10 
+-- 2. Update the salary of all employees in the 'IT' department by increasing it by 5%.
+UPDATE employees 
+SET salary = salary +(salary * 1.05)
 WHERE department = 'IT';
 
 -- 3. Retrieve the names of employees who joined after January 1, 2021.
@@ -53,7 +54,7 @@ SELECT * FROM employees
 WHERE joining_date > '2022-01-01';
 
 -- 8. Find the average salary of employees in each department.
-SELECT department, AVG(salary) AS average_salary 
+SELECT department, ROUND(AVG(salary),2) AS average_salary 
 FROM employees
 GROUP BY department;
 
