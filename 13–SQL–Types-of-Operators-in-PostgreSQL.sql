@@ -1,8 +1,10 @@
 SELECT * FROM employee2 ORDER BY employee_id ASC;
 
-SELECT first_name, salary, 
-		(salary*0.10) AS Bonus
-FROM employee2;
+SELECT first_name, salary,dept_name, 
+	 (salary*0.10) AS Bonus 
+	 
+FROM employee2 
+WHERE dept_name = 'Operations';
 
 
 --CALCULATE NEW SALARY
