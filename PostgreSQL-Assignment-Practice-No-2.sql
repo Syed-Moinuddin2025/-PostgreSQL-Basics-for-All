@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
-    dept_name VARCHAR(50),
+    department VARCHAR(50),
     salary NUMERIC(10, 2),
     joining_date DATE,
     age INTEGER,
@@ -23,7 +23,7 @@ VALUES
     ('Sophia', 'Williams', 'HR', 47000, '2020-12-15', NULL, 'sophia.williams@example.com');
 SELECT * FROM employees; 
 -- 1. Retrieve all employees’ first_name and their departments.
-SELECT first_name, dept_name
+SELECT first_name, department
 FROM employees;
 
 -- 2. Update the salary of all employees in the 'IT' department by increasing it by 10%.
@@ -73,16 +73,16 @@ WHERE age > 30;
 -- 12. Find the highest salary in the IT department.
 SELECT MAX(salary) AS highest_salary
 FROM employees 
-WHERE dept_name = 'IT';
+WHERE department = 'IT';
 
 -- 13. Update the email column for all employees with appropriate values.
 UPDATE employees
 SET email = CONCAT(first_name, '.', last_name, '@example.com');
 
 -- 14. Find the total number of employees in each department.
-SELECT dept_name, COUNT(*) AS total_employees 
+SELECT department, COUNT(*) AS total_employees 
 FROM employees 
-GROUP BY dept_name;
+GROUP BY department;
 
 -- 15. Sort employees by their joining_date from the newest to the oldest.
 SELECT * FROM employees
@@ -122,8 +122,8 @@ SELECT first_name, last_name, salary FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);
 
 -- 24. Count the number of employees in each department where the department name starts with 'M'.
-SELECT dept_name, COUNT(*) AS total_employees FROM employees 
-WHERE dept_name LIKE 'M%' GROUP BY dept_name;
+SELECT department, COUNT(*) AS total_employees FROM employees 
+WHERE department LIKE 'M%' GROUP BY department;
 
 -- 25. Retrieve employees who do not have an email address (email is NULL).
 SELECT * FROM employees WHERE email IS NULL;
@@ -221,7 +221,7 @@ WHERE employee_id NOT IN (SELECT MIN(employee_id) FROM employees GROUP BY first_
 
 -- 51. Update the email column of all employees to include their department (e.g., john.doe@it.example.com).
 UPDATE employees 
-SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(dept_name), '.example.com');
+SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(department), '.example.com');
 
 -- 52. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employees (salary);
