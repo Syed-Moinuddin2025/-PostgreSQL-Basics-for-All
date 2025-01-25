@@ -16,7 +16,7 @@ SELECT * FROM employees;
 
 COPY
 employees(employee_id, first_name, last_name, email, department, salary, joining_date, age)
-FROM 'D:\GiHubProjects\SQL-Basics-for-All\CSV files\employees_data_Queries-Operators.csv'
+FROM 'D:\GiHubProjects\PostgreSQL-Basics-for-All\CSV files & Docx\employees_data_Queries-Operators.csv'
 DELIMITER','
 CSV HEADER;
 
