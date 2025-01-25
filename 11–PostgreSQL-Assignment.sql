@@ -1,3 +1,4 @@
+-- Active: 1737821677505@@127.0.0.1@5432@company
 -- Drop the table if it already exists
 DROP TABLE IF EXISTS employees;
 -- Create the employees table
