@@ -218,6 +218,8 @@ SET email = CONCAT(LOWER(first_name), '.', LOWER(last_name), '@', LOWER(departme
 -- 50. Create an index on the salary column to improve query performance for salary-based searches.
 CREATE INDEX idx_salary ON employees (salary);
 
+SELECT * FROM pg_indexes WHERE tablename = 'employees';
+
 --Arithmetic Operators Examples:
 
 -- 51. Retrieve the first_name, salary, and calculate a 10% bonus on the salary.
@@ -225,15 +227,30 @@ SELECT first_name, salary, salary * 0.10 AS bonus
 FROM employees;
 
 -- 52. Retrieve the first_name, salary, and calculate the total salary after adding a 5000 bonus.
-SELECT first_name, salary, salary + 5000 AS total_salary
+SELECT first_name, salary,
+5000 AS bonus,
+salary + 5000 AS total_salary
 FROM employees;
 
 -- 53. Retrieve the first_name, salary, and calculate the salary after subtracting a 2000 deduction.
-SELECT first_name, salary, salary - 2000 AS final_salary
+SELECT first_name,
+salary, salary - 2000 AS final_salary
+FROM employees;
+
+SELECT first_name,salary,
+2000 AS deduction,
+salary - 2000 AS final_salary
 FROM employees;
 
 -- 54. Retrieve the first_name, salary, and calculate the salary for a 20% increase in salary.
-SELECT first_name, salary, salary * 1.20 AS increased_salary
+SELECT first_name, salary,
+salary * 1.20 AS increased_salary
+FROM employees;
+
+SELECT 
+  first_name,salary, 
+  salary * 0.20 AS increase_amount, 
+  salary + (salary * 0.20) AS increased_salary
 FROM employees;
 
 -- 55. Retrieve the first_name, salary, and calculate the result of dividing the salary by 2.
@@ -245,7 +262,19 @@ SELECT first_name, salary, salary % 1000 AS remainder
 FROM employees;
 
 -- 57. Retrieve the first_name, salary, and calculate the total salary after applying a 5% tax deduction.
-SELECT first_name, salary, salary - (salary * 0.05) AS salary_after_tax
+SELECT first_name, salary, 
+salary - (salary * 0.05) AS salary_after_tax
+FROM employees;
+
+SELECT first_name,  salary, 
+salary * 0.05 AS tax_amount,
+salary - (salary * 0.05) AS salary_after_tax 
+FROM employees;
+
+SELECT 
+  first_name,  salary, 
+  ROUND(salary - (salary * 0.05), 2) AS salary_after_tax, 
+  ROUND(salary * 0.05, 2) AS tax_amount
 FROM employees;
 
 -- 58. Retrieve the first_name, salary, and calculate the difference between the salary and a fixed amount of 3000.
