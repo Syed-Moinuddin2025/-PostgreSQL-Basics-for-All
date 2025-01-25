@@ -297,3 +297,54 @@ FROM employees;
 -- 70. Retrieve the first_name, salary, and calculate the salary for a 12% bonus.
 SELECT first_name, salary, salary * 1.12 AS salary_with_12_percent_bonus
 FROM employees;
+-- 71. Retrieve the first_name, salary, and calculate the salary for a 12% bonus.
+SELECT first_name, salary, (salary * 0.12) AS bonus, (salary + (salary * 0.12)) AS total_salary
+FROM employees;
+
+-- Comparison Operators Examples:
+
+-- 72. Retrieve employees with salary greater than 50,000.
+SELECT * FROM employees
+WHERE salary > 50000;
+
+-- 73. Retrieve employees whose age is either 25 or 30.
+SELECT * FROM employees
+WHERE age IN (25, 30);
+
+-- 74. Retrieve employees whose department is either 'HR' or 'IT', and salary is greater than 45,000.
+SELECT * FROM employees
+WHERE department IN ('HR', 'IT') AND salary > 45000;
+
+-- 75. Retrieve employees whose experience is between 3 and 8 years.
+SELECT * FROM employees
+WHERE experience BETWEEN 3 AND 8;
+
+-- 76. Retrieve employees whose salary is not equal to 40,000.
+SELECT * FROM employees
+WHERE salary != 40000;
+
+-- 77. Retrieve employees with age less than or equal to 28.
+SELECT * FROM employees
+WHERE age <= 28;
+
+-- Logical Operators Examples:
+
+-- 78. Retrieve employees who are in 'Finance' department and have more than 3 years of experience.
+SELECT * FROM employees
+WHERE department = 'Finance' AND experience > 3;
+
+-- 79. Retrieve employees who are either from 'HR' department or have a salary greater than 60,000.
+SELECT * FROM employees
+WHERE department = 'HR' OR salary > 60000;
+
+-- 80. Retrieve employees who are neither from 'Sales' nor 'HR' department.
+SELECT * FROM employees
+WHERE NOT department IN ('Sales', 'HR');
+
+-- 81. Retrieve employees who don't have a NULL value in the address field.
+SELECT * FROM employees
+WHERE address IS NOT NULL;
+
+-- 82. Retrieve employees whose salary is greater than 50,000 and age is less than 35.
+SELECT * FROM employees
+WHERE salary > 50000 AND age < 35;
