@@ -1,3 +1,7 @@
+CREATE EXTENSION pgaudit;
+
+
+SELECT * FROM employees;
 -- Basic Queries
 -- 1. Retrieve all employees' first_name and their departments.
 SELECT first_name, department
@@ -8,12 +12,24 @@ SELECT first_name, last_name, email
 FROM employees;
 
 -- 3. Retrieve the details of employees who work in the 'Sales' department.
+SELECT first_name, employee_id
+FROM employees
+WHERE department = 'HR'
+LIMIT 100;
+
+UPDATE employees
+SET department = 'Sales'
+WHERE employee_id IN (SELECT employee_id
+    FROM employees
+    WHERE department = 'HR'
+    LIMIT 100
+);
 SELECT *
 FROM employees
-WHERE department = 'Sales';
-
+WHERE department = 'Sales'
+limit 5;
 -- 4. Retrieve the names of employees who have a salary greater than 50,000.
-SELECT first_name, last_name
+SELECT first_name, last_name,salary
 FROM employees
 WHERE salary > 50000;
 
