@@ -211,11 +211,10 @@ FROM employees;
 SELECT 
     first_name, 
     last_name, 
-    CONCAT( DATE_PART('year', AGE(CURRENT_DATE, joining_date)), ' years ', 
-        DATE_PART('month', AGE(CURRENT_DATE, joining_date)), ' months'
+    CONCAT( DATE_PART('year', AGE(CURRENT_DATE, joining_date)), ' Years ', 
+       	 DATE_PART('month', AGE(CURRENT_DATE, joining_date)), ' Months'
     ) AS time_with_company
 FROM employees;
-
 
 -- 44. Retrieve employees whose first and last names are identical (e.g., first_name = last_name).
 SELECT * FROM employees WHERE first_name = last_name;
