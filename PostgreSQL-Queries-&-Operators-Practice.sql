@@ -201,6 +201,22 @@ GROUP BY department ORDER BY total_employees DESC LIMIT 1;
 SELECT first_name, last_name, (CURRENT_DATE - joining_date) AS days_with_company 
 FROM employees;
 
+SELECT 
+    first_name, 
+    last_name, 
+    AGE(CURRENT_DATE, joining_date) AS time_with_company,
+    DATE_PART('year', AGE(CURRENT_DATE, joining_date)) AS years_with_company
+FROM employees;
+
+SELECT 
+    first_name, 
+    last_name, 
+    CONCAT( DATE_PART('year', AGE(CURRENT_DATE, joining_date)), ' years ', 
+        DATE_PART('month', AGE(CURRENT_DATE, joining_date)), ' months'
+    ) AS time_with_company
+FROM employees;
+
+
 -- 44. Retrieve employees whose first and last names are identical (e.g., first_name = last_name).
 SELECT * FROM employees WHERE first_name = last_name;
 
