@@ -175,6 +175,14 @@ VALUES (employee_id, 'First', 'Last', 'department', 50000, '2025-01-01', NULL, N
 SELECT * FROM employees 
 WHERE joining_date >= CURRENT_DATE - INTERVAL '6 months';
 
+SELECT COUNT(*) AS employee_count
+FROM employees
+WHERE joining_date >= CURRENT_DATE - INTERVAL '6 months';
+
+SELECT *, COUNT(*) OVER () AS total_employees
+FROM employees
+WHERE joining_date >= CURRENT_DATE - INTERVAL '6 months';
+
 -- 39. Update the salary of employees earning the minimum salary to 40,000.
 UPDATE employees
 SET salary = 40000 WHERE salary = (SELECT MIN(salary) FROM employees);
