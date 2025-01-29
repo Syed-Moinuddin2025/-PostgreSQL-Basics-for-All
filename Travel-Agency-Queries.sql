@@ -1,3 +1,4 @@
+-- Active: 1737821677505@@127.0.0.1@5432@Travel_Agency
 CREATE TABLE invoices (
     invoice_no INTEGER PRIMARY KEY,
     customer_name VARCHAR(50),
