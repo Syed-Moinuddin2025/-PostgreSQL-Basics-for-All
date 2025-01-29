@@ -45,6 +45,10 @@ SELECT * FROM invoices ORDER BY profit_aed DESC LIMIT 1;
 -- Q5: Update the payment status to 'Paid' for invoice no 108.
 UPDATE invoices SET payment_status = 'Paid' WHERE invoice_no = 108;
 
+UPDATE invoices 
+SET payment_status = 'Paid', payment_status2 = 'Cleared' 
+WHERE invoice_no = 108;
+
 -- Q6: Count the number of 'Unpaid' invoices.
 SELECT COUNT(*) FROM invoices WHERE payment_status = 'Unpaid';
 
