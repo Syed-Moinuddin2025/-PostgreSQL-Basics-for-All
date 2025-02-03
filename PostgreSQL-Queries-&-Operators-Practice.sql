@@ -58,9 +58,9 @@ SELECT department, ROUND(AVG(salary),2) AS average_salary
 FROM employees
 GROUP BY department;
 
--- 9. Find employees who are older than 30 years.
+-- 9. Find employees who are older than 35 years.
 SELECT * FROM employees
-WHERE age > 30;
+WHERE age > 35;
 
 -- 10. Find the highest salary in the IT department.
 SELECT MAX(salary) AS highest_salary
@@ -103,9 +103,9 @@ FROM employees
 GROUP BY department
 ORDER BY department;
 
--- 18. Find employees who joined in the year 2023.
+-- 18. Find employees who joined in the year 2024.
 SELECT * FROM employees 
-WHERE EXTRACT(YEAR FROM joining_date) = 2023;
+WHERE EXTRACT(YEAR FROM joining_date) = 2024;
 
 -- 19. Retrieve the minimum salary in the company.
 SELECT MIN(salary) AS minimum_salary 
