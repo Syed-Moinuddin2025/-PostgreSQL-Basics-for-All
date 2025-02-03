@@ -1,4 +1,4 @@
--- Active: 1737821677505@@127.0.0.1@5432@company@public
+-- Active: 1738588937501@@127.0.0.1@5432@company@public
 DROP TABLE IF EXISTS employees;
 
 CREATE TABLE employees(
@@ -64,8 +64,13 @@ WHERE age > 30;
 
 -- 10. Find the highest salary in the IT department.
 SELECT MAX(salary) AS highest_salary
-FROM employees 
+FROM employees
 WHERE department = 'IT';
+
+SELECT first_name , salary,department
+FROM employees
+WHERE department = 'IT'
+AND salary = (SELECT MAX(salary) FROM employees WHERE department = 'IT')
 
 -- 11. Update the email column for all employees with appropriate values.
 UPDATE employees
