@@ -64,7 +64,7 @@ WHERE (department, age) IN (
 );
 
 -- 10. Retrieve the details of employees whose age is between 25 and 35.
-SELECT *
+SELECT first_name,age
 FROM employees
 WHERE age BETWEEN 25 AND 35;
 
